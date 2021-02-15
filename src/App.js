@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { Link, Switch, Route, Router } from "react-router";
+import Nav from "./components/nav/nav";
+import { Counter } from "./pages/counter/counter";
+import CounterWithRedux from "./pages/counterWithRedux/counterWithRedux";
+import UserList from "./pages/user-list/user-list";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Nav />
+      <Switch>
+        {/* <Route exactly component={Landing} pattern='/' /> */}
+        <Route exactly path='/counter' component={Counter} />
+        <Route exactly path='/counter-redux' component={CounterWithRedux} />
+        <Route exactly path='/user-list' component={UserList} />
+        {/* <Route component={Page404} /> */}
+      </Switch>
     </div>
   );
 }
