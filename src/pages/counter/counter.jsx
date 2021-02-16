@@ -17,20 +17,15 @@ export class Counter extends Component {
     };
   }
 
-  componentDidMount() {
-    this.timer = setTimeout(
-      () => this.setState((prevState) => ({ ...this.state, showToast: "" })),
-      6000
-    );
-  }
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
   render() {
     const { value } = this.state;
     const onDecrement = () => {
       if (value <= 0) {
+        setTimeout(
+          () =>
+            this.setState((prevState) => ({ ...this.state, showToast: "" })),
+          5000
+        );
         showToastFN(value);
       } else {
         this.setState({
