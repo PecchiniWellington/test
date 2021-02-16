@@ -11,11 +11,9 @@ function App() {
     <div className='App'>
       <Nav />
       <Switch>
-        {/* <Route exactly component={Landing} pattern='/' /> */}
         <Route exactly path='/counter' component={Counter} />
         <Route exactly path='/counter-redux' component={CounterWithRedux} />
         <Route exactly path='/user-list' component={UserList} />
-        {/* <Route component={Page404} /> */}
       </Switch>
     </div>
   );
